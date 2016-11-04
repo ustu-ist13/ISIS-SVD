@@ -3,7 +3,7 @@
     /// <summary>
     /// Интерфейс обслуживания автомата
     /// </summary>
-    interface IService
+    interface IService //пока не знаю, что сюда пихать
     {
         /// <summary>
         /// Оповестить техника
