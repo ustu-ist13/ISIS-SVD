@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Expantion\Currency.cs" />
     <Compile Include="Expantion\Product.cs" />
     <Compile Include="Expantion\ProductSale.cs" />
     <Compile Include="Expantion\Sale.cs" />
@@ -57,9 +58,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VendorInterfaces\ICalculation.cs" />
-    <Compile Include="VendorInterfaces\IInteraction.cs" />
-    <Compile Include="VendorInterfaces\IService.cs" />
+    <Compile Include="TestClass\CurrencyReceiver.cs" />
+    <Compile Include="VendorInterface\ICalculation.cs" />
+    <Compile Include="VendorInterface\IDevice.cs" />
+    <Compile Include="VendorInterface\IInteraction.cs" />
+    <Compile Include="VendorInterface\IService.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,6 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

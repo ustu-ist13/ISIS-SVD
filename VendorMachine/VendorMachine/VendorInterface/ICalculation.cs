@@ -1,6 +1,6 @@
 ﻿using VendorMachine.Expantion;
 
-namespace VendorMachine.VendorInterfaces
+namespace VendorMachine.VendorInterface
 {
     /// <summary>
     /// Интерфейс расчета с клиентом

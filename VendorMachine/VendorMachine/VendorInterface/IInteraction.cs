@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using VendorMachine.Expantion;
 
-namespace VendorMachine.VendorInterfaces
+namespace VendorMachine.VendorInterface
 {
     /// <summary>
     /// Интерфейс взаимодействия с клиентом

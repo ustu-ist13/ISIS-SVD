@@ -1,9 +1,9 @@
-﻿namespace VendorMachine.VendorInterfaces
+﻿namespace VendorMachine.VendorInterface
 {
     /// <summary>
     /// Интерфейс обслуживания автомата
     /// </summary>
-    interface IService //пока не знаю, что сюда пихать
+    interface IService 
     {
         /// <summary>
         /// Оповестить техника
@@ -13,5 +13,9 @@
         /// Протестировать устройства на работоспособность
         /// </summary>
         void TestDevices();
+        /// <summary>
+        /// Отправить письма на почту техника
+        /// </summary>
+        void SendMail();
     }
 }
