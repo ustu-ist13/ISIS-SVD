@@ -25,3 +25,4 @@ namespace VendorMachine.TestClass
         //public int AddBalance(IEnumerable<Currency> money) => money.Where(x => RecognizeCurrency(x)).Select(x => x.).Sum();
     }
 }
+// Добавил коммент в код, чтобы сделать коммит с базой данных
