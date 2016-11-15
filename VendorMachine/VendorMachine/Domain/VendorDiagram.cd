@@ -4,7 +4,7 @@
     <Position X="2.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Product.cs</FileName>
+      <FileName>Domain\Product.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VendorMachine.Spiral" Collapsed="true">
@@ -15,8 +15,8 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAEAAAAAAAAAAABAAAAAAAAIAAAA=</HashCode>
-      <FileName>Spiral.cs</FileName>
+      <HashCode>AAACAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Domain\Spiral.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Product" />
@@ -24,9 +24,16 @@
   </Class>
   <Class Name="VendorMachine.ProductSale" Collapsed="true">
     <Position X="4.5" Y="4.25" Width="1.5" />
+    <AssociationLine Name="Product" Type="VendorMachine.Product" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="4.25" />
+        <Point X="5.25" Y="3.188" />
+        <Point X="4" Y="3.188" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAACAIAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ProductSale.cs</FileName>
+      <FileName>Domain\ProductSale.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Sale" />
@@ -37,14 +44,62 @@
     <Position X="6.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAABAAgAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
-      <FileName>Sale.cs</FileName>
+      <FileName>Domain\Sale.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VendorMachine.ValuteType" Collapsed="true">
-    <Position X="6" Y="1.75" Width="1.5" />
+    <Position X="6.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAEAAAAAASAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ValuteType.cs</FileName>
+      <HashCode>AAAAAAEAAAAAAgAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ValuteType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendorMachine.ProductLoad" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ProductLoad.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+      <Property Name="Load" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VendorMachine.Load" Collapsed="true">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Load.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendorMachine.ValuteLoad" Collapsed="true">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAACAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ValuteLoad.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Load" />
+      <Property Name="ValuteType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VendorMachine.Domain.Action" Collapsed="true">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Action.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Load" />
+      <Property Name="Sale" />
+      <Property Name="Journal" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VendorMachine.Journal" Collapsed="true">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Journal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

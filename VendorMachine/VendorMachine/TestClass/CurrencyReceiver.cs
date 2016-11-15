@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VendorMachine.VendorInterface;
+using VendorMachine.Domain;
 
 namespace VendorMachine.TestClass
 {
@@ -30,3 +31,4 @@ namespace VendorMachine.TestClass
 // Добавил коммент в код, чтобы сделать коммит с базой данных
 // Ещё один коммент, но уже после правки gitignore
 // А этот комментарий сделан для того, чтобы добавить проект парадайма в систему контроля версий
+// очередной комментарий

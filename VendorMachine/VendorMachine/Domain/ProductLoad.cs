@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace VendorMachine
+namespace VendorMachine.Domain
 {
-    public class ProductSale
+    public class ProductLoad
     {
-        public Sale Sale { get; set; }
         public Product Product { get; set; }
+
+        public Load Load { get; set; }
+
         public int Amount { get; set; }
 
-        public ProductSale(Sale sale, Product pr, int amount)
+        public ProductLoad(Product product, Load load, int amount)
         {
-            Sale = sale;
-            Product = pr;
+            Product = product;
+            Load = load;
             Amount = amount;
         }
     }

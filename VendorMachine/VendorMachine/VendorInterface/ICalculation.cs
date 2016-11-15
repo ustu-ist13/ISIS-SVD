@@ -1,4 +1,4 @@
-﻿
+﻿using VendorMachine.Domain;
 
 namespace VendorMachine.VendorInterface
 {

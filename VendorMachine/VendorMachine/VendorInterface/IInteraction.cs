@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-
+using VendorMachine.Domain;
 namespace VendorMachine.VendorInterface
 {
     /// <summary>
