@@ -202,9 +202,7 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
-# SQL Server files
-*.mdf
-*.ldf
+
 
 # Business Intelligence projects
 *.rdl.data
@@ -225,6 +223,10 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# SQL Server files
+*.mdf
+*.ldf
 
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts

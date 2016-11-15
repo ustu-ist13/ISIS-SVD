@@ -27,3 +27,6 @@ namespace VendorMachine.TestClass
         //public int AddValuteAmount(IEnumerable<ValuteType> money) => 
     }
 }
+// Добавил коммент в код, чтобы сделать коммит с базой данных
+// Ещё один коммент, но уже после правки gitignore
+// А этот комментарий сделан для того, чтобы добавить проект парадайма в систему контроля версий
