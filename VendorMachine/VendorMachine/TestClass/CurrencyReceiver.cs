@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VendorMachine.VendorInterface;
-using VendorMachine.Expantion;
 
 namespace VendorMachine.TestClass
 {
@@ -12,16 +11,19 @@ namespace VendorMachine.TestClass
     {
         public string Name { get; set; }
         public bool Status { get; set; }
+        public IEnumerable<ValuteType> ValuteTypes { get; set; }
         /// <summary>
         /// Распознает вставленную валюту
         /// </summary>
-        /// <param name="curr"></param>
+        /// <param name="valute"></param>
         /// <returns></returns>
-        public bool RecognizeCurrency(Currency curr) => true;
+        public bool RecognizeValute(ValuteType valute) => ValuteTypes
+            .FirstOrDefault(x => x.Name == valute.Name && x.Par == valute.Par) != null ? true : false;
         /// <summary>
         /// Наращивает баланс клиента
         /// </summary>
         /// <param name="money"></param>
-        //public int AddBalance(IEnumerable<Currency> money) => money.Where(x => RecognizeCurrency(x)).Select(x => x.).Sum();
+        public int AddBalance(IEnumerable<ValuteType> money) => money.Where(x => RecognizeValute(x)).Select(x => x.Par).Sum();
+        //public int AddValuteAmount(IEnumerable<ValuteType> money) => 
     }
 }

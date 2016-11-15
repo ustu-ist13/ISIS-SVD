@@ -1,4 +1,7 @@
-﻿namespace VendorMachine.VendorInterface
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace VendorMachine.VendorInterface
 {
     /// <summary>
     /// Интерфейс обслуживания автомата
@@ -12,7 +15,7 @@
         /// <summary>
         /// Протестировать устройства на работоспособность
         /// </summary>
-        void TestDevices();
+        void TestDevices(IEnumerable<IDevice> devices);
         /// <summary>
         /// Отправить письма на почту техника
         /// </summary>
