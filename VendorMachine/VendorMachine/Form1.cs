@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VendorMachine.Domain;
+using Newtonsoft.Json;
 
 namespace VendorMachine
 {
@@ -15,6 +17,9 @@ namespace VendorMachine
         public Form1()
         {
             InitializeComponent();
+            Product pr = new Product("Сникерс", 50);
+            string json = JsonConvert.SerializeObject(pr);
+            MessageBox.Show(json);
         }
     }
 }
