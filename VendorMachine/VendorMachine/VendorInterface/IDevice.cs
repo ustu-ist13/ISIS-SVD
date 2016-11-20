@@ -16,5 +16,7 @@ namespace VendorMachine.VendorInterface
         /// Статус устройства
         /// </summary>
         bool Status { get; set; }
+
+        void ChangeStatus(bool current);
     }
 }

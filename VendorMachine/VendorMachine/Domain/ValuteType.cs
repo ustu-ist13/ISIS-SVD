@@ -7,12 +7,14 @@ namespace VendorMachine.Domain
 {
     public class ValuteType
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public int Par { get; set; }
         public int CurrentAmount { get; set; }
 
-        public ValuteType(string name, int par, int amount)
+        public ValuteType(int id, string name, int par, int amount)
         {
+            ID = id;
             Name = name;
             Par = par;
             CurrentAmount = amount;

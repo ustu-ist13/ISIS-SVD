@@ -11,9 +11,9 @@ namespace VendorMachine.Domain
         public Product Product { get; set; }
         public int Amount { get; set; }
 
-        public ProductSale(Sale sale, Product pr, int amount)
+        public ProductSale(Product pr, int amount)
         {
-            Sale = sale;
+            Sale = new Sale(0, 0, 0);
             Product = pr;
             Amount = amount;
         }

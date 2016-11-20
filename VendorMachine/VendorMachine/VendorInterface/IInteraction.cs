@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-
 using VendorMachine.Domain;
+
 namespace VendorMachine.VendorInterface
 {
     /// <summary>
@@ -13,18 +13,18 @@ namespace VendorMachine.VendorInterface
         /// </summary>
         /// <param name="code">Код товара</param>
         /// <returns>Выбранный товар</returns>
-        Product SelectProduct(int code);
+        Product SelectProduct(int code, IEnumerable<Spiral> spirals);
         /// <summary>
-        /// Продажа выбранного товара
+        /// Формирование продажи выбранного товара
         /// </summary>
         /// <param name="product">Товар для продажи</param>
         /// /// <param name="count">Количество товара</param>
-        ProductSale SellProduct(Product product, int count);
+        void AddProductSale(Product product, int count);
         /// <summary>
-        /// Формирование продажи для текущего клиента
+        /// Формирование общей продажи для текущего клиента
         /// </summary>
-        /// <param name="products">Список купленных товаров</param>
+        /// <param name="productSales">Список продаж</param>
         /// <returns></returns>
-        Sale CreateSale(IEnumerable<ProductSale> products);
+        void CreateSale();
     }
 }
