@@ -13,6 +13,7 @@ namespace VendorMachine
         public CurrencyReceiver receiver = new CurrencyReceiver();
 
         public ValuteType CurrentMoney;
+        public BankCard CurrentCard;
         public List<ProductSale> CurrentProductSales;
         public Sale CurrentSale;
 

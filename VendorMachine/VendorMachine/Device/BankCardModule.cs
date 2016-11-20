@@ -14,8 +14,12 @@ namespace VendorMachine.Device
         public bool Status { get; set; } = true;
 
         private IEnumerable<BankCard> cards;
-
-        public bool CheckValidation(BankCard card) => cards.Contains(card) ? true : false;
+        /// <summary>
+        /// Проверка карты на действительность
+        /// </summary>
+        /// <param name="card"></param>
+        /// <returns></returns>
+        public bool CheckValidation(BankCard card) => cards.Contains(card) && card.Date >= DateTime.Now ? true : false;
 
         public void ChangeStatus(bool current) => Status = current ? false : true;
     }
