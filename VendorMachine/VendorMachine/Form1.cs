@@ -18,12 +18,9 @@ namespace VendorMachine
         {
             InitializeComponent();
             Controller AutomatProcessor = new Controller();
-            Product pr = new Product("Сникерс", 50);
-            AutomatProcessor.AddSpiral(1, 15, 15, pr);
-            string json = JsonConvert.SerializeObject(pr);
-            string spiralsserialize = JsonConvert.SerializeObject(AutomatProcessor.CurrentSpiralState);
-            MessageBox.Show(json);
-            MessageBox.Show(spiralsserialize);
+            AutomatProcessor.AddSpiral(1, 15, 15, new Product("Сникерс", 50));
+            AutomatProcessor.AddSpiral(2, 16, 16, new Product("Шаверма", 150));
+            AutomatProcessor.AddSpiral(3, 20, 20, new Product("Нямка", 42));
         }
     }
 }

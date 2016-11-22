@@ -3,6 +3,8 @@ using System.Linq;
 using VendorMachine.VendorInterface;
 using VendorMachine.Domain;
 using VendorMachine.Device;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace VendorMachine
 {
@@ -75,6 +77,9 @@ namespace VendorMachine
                 
             }
             CurrentSpiralState.Add(new Spiral(number, amount, maxAmount, product));
+            //FileStream file = new FileStream("/DataStorage/Spirals.json", FileMode.Create);
+            string spiralsserialize = JsonConvert.SerializeObject(CurrentSpiralState);
+            File.WriteAllText("Spirals.json", spiralsserialize);
         }
 
         #endregion
