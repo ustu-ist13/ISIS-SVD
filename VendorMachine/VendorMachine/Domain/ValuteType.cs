@@ -9,7 +9,7 @@ namespace VendorMachine.Domain
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int Par { get; set; }
+        public int Par { get; set; } // Прим. Влад: ЧТО ТЫ ТАКОЕ?
         public int CurrentAmount { get; set; }
 
         public ValuteType(int id, string name, int par, int amount)

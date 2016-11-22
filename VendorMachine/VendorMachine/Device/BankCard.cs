@@ -10,17 +10,17 @@ namespace VendorMachine.Device
     {
         public string Number { get; set; }
         public short Pin { get; set; }
-        public DateTime Date { get; set; }
-        public string Owner { get; set; }
-        public int Balance { get; set; }
+        public DateTime DateExpire { get; set; } // Дата истечения срока действия
+        public string OwnerName { get; set; } // Имя владельца
+        public int CurrentBalance { get; set; }
 
-        public BankCard(string nb, short pin, DateTime date, string owner, int balance)
+        public BankCard(string nb, short pin, DateTime date, string owner, int initial_balance)
         {
             Number = nb;
             Pin = pin;
-            Date = date;
-            Owner = owner;
-            Balance = balance;
+            DateExpire = date;
+            OwnerName = owner;
+            CurrentBalance = initial_balance;
         }
     }
 }

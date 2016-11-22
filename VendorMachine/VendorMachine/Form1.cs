@@ -17,9 +17,13 @@ namespace VendorMachine
         public Form1()
         {
             InitializeComponent();
+            Controller AutomatProcessor = new Controller();
             Product pr = new Product("Сникерс", 50);
+            AutomatProcessor.AddSpiral(1, 15, 15, pr);
             string json = JsonConvert.SerializeObject(pr);
+            string spiralsserialize = JsonConvert.SerializeObject(AutomatProcessor.CurrentSpiralState);
             MessageBox.Show(json);
+            MessageBox.Show(spiralsserialize);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace VendorMachine
         public BankCard CurrentCard;
         public List<ProductSale> CurrentProductSales;
         public Sale CurrentSale;
+        public List<Spiral> CurrentSpiralState;
 
         public int ClientBalance { get; set; }
         public int ClientTotalCost { get; set; }
@@ -65,6 +66,17 @@ namespace VendorMachine
         #endregion
 
         #region Сервис и обслуживание
+
+        public void AddSpiral(int number, int amount, int maxAmount, Product product)
+        {
+            if (CurrentSpiralState == null)
+            {
+                CurrentSpiralState = new List<Spiral>();
+                
+            }
+            CurrentSpiralState.Add(new Spiral(number, amount, maxAmount, product));
+        }
+
         #endregion
     }
 }
