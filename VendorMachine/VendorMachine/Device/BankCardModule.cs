@@ -19,9 +19,7 @@ namespace VendorMachine.Device
         /// </summary>
         /// <param name="card"></param>
         /// <returns></returns>
-        public bool CheckCardValidation(BankCard card) => cards.Contains(card) && card.Date >= DateTime.Now ? true : false;
-
-        public void AcceptCard(BankCard card) { }
+        public bool CheckValidation(BankCard card) => cards.Contains(card) && card.Date >= DateTime.Now ? true : false;
 
         public void ChangeStatus(bool current) => Status = current ? false : true;
     }
