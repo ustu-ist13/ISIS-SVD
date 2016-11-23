@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using VendorMachine.Domain;
 
 namespace VendorMachine.VendorInterface
 {
@@ -20,5 +21,7 @@ namespace VendorMachine.VendorInterface
         /// Отправить письма на почту техника
         /// </summary>
         void SendMail();
+
+        void AddSpiral(int number, int amount, int maxAmount, Product product);
     }
 }

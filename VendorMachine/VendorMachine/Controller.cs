@@ -3,6 +3,8 @@ using System.Linq;
 using VendorMachine.VendorInterface;
 using VendorMachine.Domain;
 using VendorMachine.Device;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace VendorMachine
 {
@@ -16,6 +18,7 @@ namespace VendorMachine
         public BankCard CurrentCard;
         public List<ProductSale> CurrentProductSales;
         public Sale CurrentSale;
+        public List<Spiral> CurrentSpiralState;
 
         public int ClientBalance { get; set; }
         public int ClientTotalCost { get; set; }
@@ -38,7 +41,7 @@ namespace VendorMachine
             switch (method)
             {
                 case PaymentMethod.valute:
-                    ClientBalance += receiver.AcceptMoney(CurrentMoney).Item2;
+                    ClientBalance += receiver.AcceptMoney(CurrentMoney);
                     ClientTotalCost = CalculateTotalCost(CurrentProductSales);
                     ClientChange = CalculateChange(ClientBalance, ClientTotalCost);
                     break;
@@ -65,6 +68,19 @@ namespace VendorMachine
         #endregion
 
         #region Сервис и обслуживание
+
+        public void AddSpiral(int number, int amount, int maxAmount, Product product)
+        {
+            if (CurrentSpiralState == null)
+            {
+                CurrentSpiralState = new List<Spiral>();            
+            }
+            CurrentSpiralState.Add(new Spiral(number, amount, maxAmount, product));
+            //FileStream file = new FileStream("/DataStorage/Spirals.json", FileMode.Create);
+            string spiralsserialize = JsonConvert.SerializeObject(CurrentSpiralState);
+            File.WriteAllText("Spirals.json", spiralsserialize);
+        }
+
         #endregion
     }
 }
