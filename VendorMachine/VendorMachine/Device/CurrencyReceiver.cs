@@ -32,20 +32,22 @@ namespace VendorMachine.Device
         /// </summary>
         /// <param name="valute"></param>
         /// <returns></returns>
-        public Tuple<ValuteType, int> AcceptMoney(ValuteType valute) //надо подумать
+        public int AcceptMoney(ValuteType valute)
         {
             //Прим. Влад: как мы сможем возвращать непринятую валюту, если автомат не знает такой валюты?
             //Быть может, возвращать только добавляемую сумму?
             //Может быть, есть смысл принимать не ValuteType, а сами параметры, типа ("Рубль", "5")?
+            
+            //Нет надобности, мы может передать в метод: AcceptMoney(new ValuteType("Huy", 200));
 
             if (RecognizeValute(valute))
             {
                 StoredValuteTypes.First(x => x.Name == valute.Name && x.Par == valute.Par).CurrentAmount++;
-                return new Tuple<ValuteType, int>(null, AddBalance(valute));
+                return AddBalance(valute);
             }
             //Быть может, если автомат не знает такую валюту, то пусть не делает ничего, и возвращать будет он...
             //...И возвращать будет он 0, если возвращать только добавляемую сумму
-            else return new Tuple<ValuteType, int>(valute, 0);
+            else return 0;
         }
         /// <summary>
         /// Изменяет статус устройства в зависимости от текущего

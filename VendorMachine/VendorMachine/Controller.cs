@@ -41,7 +41,7 @@ namespace VendorMachine
             switch (method)
             {
                 case PaymentMethod.valute:
-                    ClientBalance += receiver.AcceptMoney(CurrentMoney).Item2;
+                    ClientBalance += receiver.AcceptMoney(CurrentMoney);
                     ClientTotalCost = CalculateTotalCost(CurrentProductSales);
                     ClientChange = CalculateChange(ClientBalance, ClientTotalCost);
                     break;
@@ -73,8 +73,7 @@ namespace VendorMachine
         {
             if (CurrentSpiralState == null)
             {
-                CurrentSpiralState = new List<Spiral>();
-                
+                CurrentSpiralState = new List<Spiral>();            
             }
             CurrentSpiralState.Add(new Spiral(number, amount, maxAmount, product));
             //FileStream file = new FileStream("/DataStorage/Spirals.json", FileMode.Create);
