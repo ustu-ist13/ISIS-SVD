@@ -11,15 +11,28 @@ using VendorMachine.Domain;
 
 namespace VendorMachine
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        string ValueFromKeyboard;
+
+        public MainMenu()
         {
             InitializeComponent();
             Controller AutomatProcessor = new Controller();
             AutomatProcessor.AddSpiral(1, 15, 15, new Product("Сникерс", 50));
             AutomatProcessor.AddSpiral(2, 16, 16, new Product("Шаверма", 150));
             AutomatProcessor.AddSpiral(3, 20, 20, new Product("Нямка", 42));
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{ValueFromKeyboard}");
+            ValueFromKeyboard = "";
+        }
+
+        private void btnNumber_Click(object sender, EventArgs e)
+        {
+            ValueFromKeyboard += (sender as Button).Name[3];
         }
     }
 }

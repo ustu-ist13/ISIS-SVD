@@ -9,14 +9,10 @@ namespace VendorMachine.VendorInterface
     /// </summary>
     interface ICalculation
     {
-        int ClientBalance { get; set; }
-        int ClientTotalCost { get; set; }
-        int ClientChange { get; set; }
-
         /// <summary>
         /// Подсчитывает общую сумму продажи
         /// </summary>
-        int CalculateTotalCost(IEnumerable<ProductSale> productSales);
+        int CalculateTotalCost(List<ProductSale> productSales);
         /// <summary>
         /// Осуществляет подсчет сдачи
         /// </summary>

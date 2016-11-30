@@ -11,13 +11,15 @@ namespace VendorMachine.Domain
         public int Balance { get; set; }
         public int TotalCost { get; set; }
         public int Change { get; set; }
+        public List<ProductSale> ProductSales = new List<ProductSale>();
 
-        public Sale(int balance, int total, int change)
+        public Sale(int balance, int total, int change, List<ProductSale> productSales)
         {
             DateTime = DateTime.Now;
             Balance = balance;
             TotalCost = total;
             Change = change;
+            ProductSales = productSales;
         }
     }
 }

@@ -18,6 +18,8 @@ namespace VendorMachine
         public BankCard CurrentCard;
         public List<ProductSale> CurrentProductSales;
         public Sale CurrentSale;
+        public short PaymentMethodID;
+
         public List<Spiral> CurrentSpiralState;
 
         public int ClientBalance { get; set; }
@@ -32,7 +34,7 @@ namespace VendorMachine
 
         public int CalculateChange(int balance, int total) => total - balance;
 
-        public int CalculateTotalCost(IEnumerable<ProductSale> productSales) => productSales
+        public int CalculateTotalCost(List<ProductSale> productSales) => productSales
             .Select(x => x.Amount * x.Product.Price)
             .Sum();
 
@@ -56,15 +58,16 @@ namespace VendorMachine
 
         #region Взаимодействие с клиентом
 
-        public Product SelectProduct(int code, IEnumerable<Spiral> spirals) => spirals.FirstOrDefault(x => x.Number == code).Product;
+        public Product SelectProduct(int code) => CurrentSpiralState.FirstOrDefault(x => x.Number == code).Product;
 
         public void AddProductSale(Product product, int count) => CurrentProductSales.Add(new ProductSale(product, count));
 
         public void CreateSale()
         {
-            CurrentSale =  new Sale(ClientBalance, ClientTotalCost, ClientChange);
-            CurrentProductSales.ForEach(x => x.Sale = CurrentSale);
-        }
+            ClientCalculation(ChoosePaymentMethod(PaymentMethodID));
+            CurrentSale = new Sale(ClientBalance, ClientTotalCost, ClientChange, CurrentProductSales);
+        } 
+
         #endregion
 
         #region Сервис и обслуживание

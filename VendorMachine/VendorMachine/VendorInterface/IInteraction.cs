@@ -13,7 +13,7 @@ namespace VendorMachine.VendorInterface
         /// </summary>
         /// <param name="code">Код товара</param>
         /// <returns>Выбранный товар</returns>
-        Product SelectProduct(int code, IEnumerable<Spiral> spirals);
+        Product SelectProduct(int code);
         /// <summary>
         /// Формирование продажи выбранного товара
         /// </summary>
