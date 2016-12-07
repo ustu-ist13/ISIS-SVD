@@ -12,7 +12,7 @@ namespace VendorMachine
     {
         #region Текущие данные
 
-        public CurrencyReceiver receiver = new CurrencyReceiver();
+        public CurrencyReceiver CurrencyReceiver = new CurrencyReceiver();
 
         public ValuteType CurrentMoney;
         public BankCard CurrentCard;
@@ -43,7 +43,6 @@ namespace VendorMachine
             switch (method)
             {
                 case PaymentMethod.valute:
-                    ClientBalance += receiver.AcceptMoney(CurrentMoney);
                     ClientTotalCost = CalculateTotalCost(CurrentProductSales);
                     ClientChange = CalculateChange(ClientBalance, ClientTotalCost);
                     break;
@@ -84,6 +83,10 @@ namespace VendorMachine
             File.WriteAllText("Spirals.json", spiralsserialize);
         }
 
+        public void AddValuteType(int id, string name, int par, int amount)
+        {
+            CurrencyReceiver.StoredValuteTypes.Add(new ValuteType(id, name, par, amount));
+        }
         #endregion
     }
 }

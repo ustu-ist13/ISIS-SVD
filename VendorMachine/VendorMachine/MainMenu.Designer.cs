@@ -58,6 +58,7 @@
             this.cmbCardNumber = new System.Windows.Forms.ComboBox();
             this.txtPinCode = new System.Windows.Forms.TextBox();
             this.cbNFC = new System.Windows.Forms.CheckBox();
+            this.btnReturnCard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -131,15 +132,16 @@
             // 
             // panelBankModule
             // 
+            this.panelBankModule.Controls.Add(this.btnReturnCard);
             this.panelBankModule.Controls.Add(this.cbNFC);
             this.panelBankModule.Controls.Add(this.btnEnterCard);
             this.panelBankModule.Controls.Add(this.label3);
             this.panelBankModule.Controls.Add(this.label4);
             this.panelBankModule.Controls.Add(this.cmbCardNumber);
             this.panelBankModule.Controls.Add(this.txtPinCode);
-            this.panelBankModule.Location = new System.Drawing.Point(17, 211);
+            this.panelBankModule.Location = new System.Drawing.Point(17, 190);
             this.panelBankModule.Name = "panelBankModule";
-            this.panelBankModule.Size = new System.Drawing.Size(204, 163);
+            this.panelBankModule.Size = new System.Drawing.Size(204, 200);
             this.panelBankModule.TabIndex = 18;
             // 
             // panelCurrencyReceiver
@@ -162,6 +164,7 @@
             this.btnEnterCurrency.TabIndex = 17;
             this.btnEnterCurrency.Text = "Внести валюту";
             this.btnEnterCurrency.UseVisualStyleBackColor = true;
+            this.btnEnterCurrency.Click += new System.EventHandler(this.btnEnterCurrency_Click);
             // 
             // label1
             // 
@@ -184,6 +187,8 @@
             // cmbValuteType
             // 
             this.cmbValuteType.FormattingEnabled = true;
+            this.cmbValuteType.Items.AddRange(new object[] {
+            "Бумажный рубль"});
             this.cmbValuteType.Location = new System.Drawing.Point(6, 31);
             this.cmbValuteType.Name = "cmbValuteType";
             this.cmbValuteType.Size = new System.Drawing.Size(191, 21);
@@ -340,7 +345,7 @@
             this.btnEnterCard.Name = "btnEnterCard";
             this.btnEnterCard.Size = new System.Drawing.Size(191, 30);
             this.btnEnterCard.TabIndex = 22;
-            this.btnEnterCard.Text = "Внести валюту";
+            this.btnEnterCard.Text = "Внести карту";
             this.btnEnterCard.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -386,6 +391,15 @@
             this.cbNFC.Text = "NFC-модуль";
             this.cbNFC.UseVisualStyleBackColor = true;
             this.cbNFC.CheckedChanged += new System.EventHandler(this.cbNFC_CheckedChanged);
+            // 
+            // btnReturnCard
+            // 
+            this.btnReturnCard.Location = new System.Drawing.Point(8, 163);
+            this.btnReturnCard.Name = "btnReturnCard";
+            this.btnReturnCard.Size = new System.Drawing.Size(191, 30);
+            this.btnReturnCard.TabIndex = 24;
+            this.btnReturnCard.Text = "Вернуть карту";
+            this.btnReturnCard.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 
@@ -445,6 +459,7 @@
         private System.Windows.Forms.ComboBox cmbCardNumber;
         private System.Windows.Forms.TextBox txtPinCode;
         private System.Windows.Forms.CheckBox cbNFC;
+        private System.Windows.Forms.Button btnReturnCard;
     }
 }
 

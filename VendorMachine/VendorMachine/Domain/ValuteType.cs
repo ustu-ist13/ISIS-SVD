@@ -20,6 +20,14 @@ namespace VendorMachine.Domain
             CurrentAmount = amount;
         }
 
-        public void AddAmount(int value) => CurrentAmount += value;
+        public ValuteType(string name, int par)
+        {
+            Name = name;
+            Par = par;
+        }
+
+        public void AddAmount() => CurrentAmount++;
+
+        public override string ToString() => $"{Name} номиналом {Par} единиц";
     }
 }

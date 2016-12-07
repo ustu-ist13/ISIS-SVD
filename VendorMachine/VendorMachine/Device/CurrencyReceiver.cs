@@ -13,7 +13,7 @@ namespace VendorMachine.Device
         public string Name { get; set; } = "Валютоприемник";
         public bool Status { get; set; } = true;
 
-        private IEnumerable<ValuteType> StoredValuteTypes;
+        public List<ValuteType> StoredValuteTypes = new List<ValuteType>();
         /// <summary>
         /// Распознает вставленную валюту
         /// </summary>
@@ -28,7 +28,7 @@ namespace VendorMachine.Device
         private int AddBalance(ValuteType acceptedValute) => acceptedValute.Par;
         
         /// <summary>
-        /// Возвращает непринятую валюту или сумму денег, добавляемую к балансу клиента
+        /// Возвращает сумму денег, добавляемую к балансу клиента
         /// </summary>
         /// <param name="valute"></param>
         /// <returns></returns>
@@ -36,7 +36,7 @@ namespace VendorMachine.Device
         {
             if (RecognizeValute(valute))
             {
-                StoredValuteTypes.First(x => x.Name == valute.Name && x.Par == valute.Par).CurrentAmount++;
+                StoredValuteTypes.First(x => x.Name == valute.Name && x.Par == valute.Par).AddAmount();
                 return AddBalance(valute);
             }
             else return 0;

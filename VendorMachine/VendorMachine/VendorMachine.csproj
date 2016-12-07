@@ -91,6 +91,7 @@
     <None Include="DataStorage\Spirals.json" />
     <None Include="Domain\VendorDiagram.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\VendorMachine.Device.CurrencyReceiver.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
