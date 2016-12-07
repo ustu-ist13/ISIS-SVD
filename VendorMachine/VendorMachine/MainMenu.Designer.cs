@@ -31,7 +31,14 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.splitContainerInput = new System.Windows.Forms.SplitContainer();
-            this.txtInformation = new System.Windows.Forms.RichTextBox();
+            this.txtDisplayInfo = new System.Windows.Forms.RichTextBox();
+            this.panelBankModule = new System.Windows.Forms.Panel();
+            this.panelCurrencyReceiver = new System.Windows.Forms.Panel();
+            this.btnEnterCurrency = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbValuteType = new System.Windows.Forms.ComboBox();
+            this.txtPar = new System.Windows.Forms.TextBox();
             this.panelKeyboard = new System.Windows.Forms.Panel();
             this.btn5 = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -45,13 +52,12 @@
             this.btn8 = new System.Windows.Forms.Button();
             this.btn6 = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
-            this.cmbValuteType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelCurrencyReceiver = new System.Windows.Forms.Panel();
-            this.btnAddValute = new System.Windows.Forms.Button();
-            this.panelBankModule = new System.Windows.Forms.Panel();
+            this.btnEnterCard = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbCardNumber = new System.Windows.Forms.ComboBox();
+            this.txtPinCode = new System.Windows.Forms.TextBox();
+            this.cbNFC = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,8 +67,9 @@
             this.splitContainerInput.Panel1.SuspendLayout();
             this.splitContainerInput.Panel2.SuspendLayout();
             this.splitContainerInput.SuspendLayout();
-            this.panelKeyboard.SuspendLayout();
+            this.panelBankModule.SuspendLayout();
             this.panelCurrencyReceiver.SuspendLayout();
+            this.panelKeyboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -103,7 +110,7 @@
             // 
             // splitContainerInput.Panel1
             // 
-            this.splitContainerInput.Panel1.Controls.Add(this.txtInformation);
+            this.splitContainerInput.Panel1.Controls.Add(this.txtDisplayInfo);
             // 
             // splitContainerInput.Panel2
             // 
@@ -114,13 +121,80 @@
             this.splitContainerInput.SplitterDistance = 211;
             this.splitContainerInput.TabIndex = 0;
             // 
-            // txtInformation
+            // txtDisplayInfo
             // 
-            this.txtInformation.Location = new System.Drawing.Point(114, 25);
-            this.txtInformation.Name = "txtInformation";
-            this.txtInformation.Size = new System.Drawing.Size(292, 136);
-            this.txtInformation.TabIndex = 0;
-            this.txtInformation.Text = "";
+            this.txtDisplayInfo.Location = new System.Drawing.Point(114, 25);
+            this.txtDisplayInfo.Name = "txtDisplayInfo";
+            this.txtDisplayInfo.Size = new System.Drawing.Size(292, 136);
+            this.txtDisplayInfo.TabIndex = 0;
+            this.txtDisplayInfo.Text = "";
+            // 
+            // panelBankModule
+            // 
+            this.panelBankModule.Controls.Add(this.cbNFC);
+            this.panelBankModule.Controls.Add(this.btnEnterCard);
+            this.panelBankModule.Controls.Add(this.label3);
+            this.panelBankModule.Controls.Add(this.label4);
+            this.panelBankModule.Controls.Add(this.cmbCardNumber);
+            this.panelBankModule.Controls.Add(this.txtPinCode);
+            this.panelBankModule.Location = new System.Drawing.Point(17, 211);
+            this.panelBankModule.Name = "panelBankModule";
+            this.panelBankModule.Size = new System.Drawing.Size(204, 163);
+            this.panelBankModule.TabIndex = 18;
+            // 
+            // panelCurrencyReceiver
+            // 
+            this.panelCurrencyReceiver.Controls.Add(this.btnEnterCurrency);
+            this.panelCurrencyReceiver.Controls.Add(this.label1);
+            this.panelCurrencyReceiver.Controls.Add(this.label2);
+            this.panelCurrencyReceiver.Controls.Add(this.cmbValuteType);
+            this.panelCurrencyReceiver.Controls.Add(this.txtPar);
+            this.panelCurrencyReceiver.Location = new System.Drawing.Point(17, 24);
+            this.panelCurrencyReceiver.Name = "panelCurrencyReceiver";
+            this.panelCurrencyReceiver.Size = new System.Drawing.Size(204, 160);
+            this.panelCurrencyReceiver.TabIndex = 17;
+            // 
+            // btnEnterCurrency
+            // 
+            this.btnEnterCurrency.Location = new System.Drawing.Point(6, 120);
+            this.btnEnterCurrency.Name = "btnEnterCurrency";
+            this.btnEnterCurrency.Size = new System.Drawing.Size(191, 30);
+            this.btnEnterCurrency.TabIndex = 17;
+            this.btnEnterCurrency.Text = "Внести валюту";
+            this.btnEnterCurrency.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Выберите тип валюты:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Номинал валюты:";
+            // 
+            // cmbValuteType
+            // 
+            this.cmbValuteType.FormattingEnabled = true;
+            this.cmbValuteType.Location = new System.Drawing.Point(6, 31);
+            this.cmbValuteType.Name = "cmbValuteType";
+            this.cmbValuteType.Size = new System.Drawing.Size(191, 21);
+            this.cmbValuteType.TabIndex = 13;
+            // 
+            // txtPar
+            // 
+            this.txtPar.Location = new System.Drawing.Point(6, 83);
+            this.txtPar.Name = "txtPar";
+            this.txtPar.Size = new System.Drawing.Size(100, 20);
+            this.txtPar.TabIndex = 15;
             // 
             // panelKeyboard
             // 
@@ -136,7 +210,7 @@
             this.panelKeyboard.Controls.Add(this.btn8);
             this.panelKeyboard.Controls.Add(this.btn6);
             this.panelKeyboard.Controls.Add(this.btn7);
-            this.panelKeyboard.Location = new System.Drawing.Point(277, 24);
+            this.panelKeyboard.Location = new System.Drawing.Point(277, 82);
             this.panelKeyboard.Name = "panelKeyboard";
             this.panelKeyboard.Size = new System.Drawing.Size(212, 235);
             this.panelKeyboard.TabIndex = 12;
@@ -260,66 +334,58 @@
             this.btn7.UseVisualStyleBackColor = true;
             this.btn7.Click += new System.EventHandler(this.btnNumber_Click);
             // 
-            // cmbValuteType
+            // btnEnterCard
             // 
-            this.cmbValuteType.FormattingEnabled = true;
-            this.cmbValuteType.Location = new System.Drawing.Point(6, 31);
-            this.cmbValuteType.Name = "cmbValuteType";
-            this.cmbValuteType.Size = new System.Drawing.Size(191, 21);
-            this.cmbValuteType.TabIndex = 13;
+            this.btnEnterCard.Location = new System.Drawing.Point(8, 127);
+            this.btnEnterCard.Name = "btnEnterCard";
+            this.btnEnterCard.Size = new System.Drawing.Size(191, 30);
+            this.btnEnterCard.TabIndex = 22;
+            this.btnEnterCard.Text = "Внести валюту";
+            this.btnEnterCard.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Выберите тип валюты:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Номер банковской карты:";
             // 
-            // textBox1
+            // label4
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 15;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Пин код:";
             // 
-            // label2
+            // cmbCardNumber
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Номинал валюты:";
+            this.cmbCardNumber.FormattingEnabled = true;
+            this.cmbCardNumber.Location = new System.Drawing.Point(8, 38);
+            this.cmbCardNumber.Name = "cmbCardNumber";
+            this.cmbCardNumber.Size = new System.Drawing.Size(191, 21);
+            this.cmbCardNumber.TabIndex = 18;
             // 
-            // panelCurrencyReceiver
+            // txtPinCode
             // 
-            this.panelCurrencyReceiver.Controls.Add(this.btnAddValute);
-            this.panelCurrencyReceiver.Controls.Add(this.label1);
-            this.panelCurrencyReceiver.Controls.Add(this.label2);
-            this.panelCurrencyReceiver.Controls.Add(this.cmbValuteType);
-            this.panelCurrencyReceiver.Controls.Add(this.textBox1);
-            this.panelCurrencyReceiver.Location = new System.Drawing.Point(17, 24);
-            this.panelCurrencyReceiver.Name = "panelCurrencyReceiver";
-            this.panelCurrencyReceiver.Size = new System.Drawing.Size(204, 160);
-            this.panelCurrencyReceiver.TabIndex = 17;
+            this.txtPinCode.Location = new System.Drawing.Point(8, 90);
+            this.txtPinCode.Name = "txtPinCode";
+            this.txtPinCode.Size = new System.Drawing.Size(100, 20);
+            this.txtPinCode.TabIndex = 20;
             // 
-            // btnAddValute
+            // cbNFC
             // 
-            this.btnAddValute.Location = new System.Drawing.Point(6, 120);
-            this.btnAddValute.Name = "btnAddValute";
-            this.btnAddValute.Size = new System.Drawing.Size(191, 30);
-            this.btnAddValute.TabIndex = 17;
-            this.btnAddValute.Text = "Внести валюту";
-            this.btnAddValute.UseVisualStyleBackColor = true;
-            // 
-            // panelBankModule
-            // 
-            this.panelBankModule.Location = new System.Drawing.Point(17, 211);
-            this.panelBankModule.Name = "panelBankModule";
-            this.panelBankModule.Size = new System.Drawing.Size(204, 179);
-            this.panelBankModule.TabIndex = 18;
+            this.cbNFC.AutoSize = true;
+            this.cbNFC.Location = new System.Drawing.Point(114, 92);
+            this.cbNFC.Name = "cbNFC";
+            this.cbNFC.Size = new System.Drawing.Size(87, 17);
+            this.cbNFC.TabIndex = 23;
+            this.cbNFC.Text = "NFC-модуль";
+            this.cbNFC.UseVisualStyleBackColor = true;
+            this.cbNFC.CheckedChanged += new System.EventHandler(this.cbNFC_CheckedChanged);
             // 
             // MainMenu
             // 
@@ -338,9 +404,11 @@
             this.splitContainerInput.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerInput)).EndInit();
             this.splitContainerInput.ResumeLayout(false);
-            this.panelKeyboard.ResumeLayout(false);
+            this.panelBankModule.ResumeLayout(false);
+            this.panelBankModule.PerformLayout();
             this.panelCurrencyReceiver.ResumeLayout(false);
             this.panelCurrencyReceiver.PerformLayout();
+            this.panelKeyboard.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -350,7 +418,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.SplitContainer splitContainerInput;
-        private System.Windows.Forms.RichTextBox txtInformation;
+        private System.Windows.Forms.RichTextBox txtDisplayInfo;
         private System.Windows.Forms.Panel panelKeyboard;
         private System.Windows.Forms.Button btn5;
         private System.Windows.Forms.Button btnProduct;
@@ -368,9 +436,15 @@
         private System.Windows.Forms.ComboBox cmbValuteType;
         private System.Windows.Forms.Panel panelCurrencyReceiver;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnAddValute;
+        private System.Windows.Forms.TextBox txtPar;
+        private System.Windows.Forms.Button btnEnterCurrency;
         private System.Windows.Forms.Panel panelBankModule;
+        private System.Windows.Forms.Button btnEnterCard;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbCardNumber;
+        private System.Windows.Forms.TextBox txtPinCode;
+        private System.Windows.Forms.CheckBox cbNFC;
     }
 }
 

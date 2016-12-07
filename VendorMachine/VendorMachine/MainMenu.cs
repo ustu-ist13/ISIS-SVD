@@ -34,5 +34,10 @@ namespace VendorMachine
         {
             ValueFromKeyboard += (sender as Button).Name[3];
         }
+
+        private void cbNFC_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPinCode.Enabled = txtPinCode.Enabled ? false : true;
+        }
     }
 }
