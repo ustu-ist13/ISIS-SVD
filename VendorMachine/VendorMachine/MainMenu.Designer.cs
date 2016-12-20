@@ -33,6 +33,7 @@
             this.splitContainerInput = new System.Windows.Forms.SplitContainer();
             this.txtDisplayInfo = new System.Windows.Forms.RichTextBox();
             this.panelBankModule = new System.Windows.Forms.Panel();
+            this.btnReturnCard = new System.Windows.Forms.Button();
             this.cbNFC = new System.Windows.Forms.CheckBox();
             this.btnEnterCard = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.btn8 = new System.Windows.Forms.Button();
             this.btn6 = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
-            this.btnReturnCard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -144,6 +144,15 @@
             this.panelBankModule.Size = new System.Drawing.Size(204, 200);
             this.panelBankModule.TabIndex = 18;
             // 
+            // btnReturnCard
+            // 
+            this.btnReturnCard.Location = new System.Drawing.Point(8, 163);
+            this.btnReturnCard.Name = "btnReturnCard";
+            this.btnReturnCard.Size = new System.Drawing.Size(191, 30);
+            this.btnReturnCard.TabIndex = 24;
+            this.btnReturnCard.Text = "Вернуть карту";
+            this.btnReturnCard.UseVisualStyleBackColor = true;
+            // 
             // cbNFC
             // 
             this.cbNFC.AutoSize = true;
@@ -217,6 +226,7 @@
             this.btnEnterValute.TabIndex = 17;
             this.btnEnterValute.Text = "Внести валюту";
             this.btnEnterValute.UseVisualStyleBackColor = true;
+            this.btnEnterValute.Click += new System.EventHandler(this.btnEnterCurrency_Click);
             // 
             // label1
             // 
@@ -388,15 +398,6 @@
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
             this.btn7.Click += new System.EventHandler(this.btnNumber_Click);
-            // 
-            // btnReturnCard
-            // 
-            this.btnReturnCard.Location = new System.Drawing.Point(8, 163);
-            this.btnReturnCard.Name = "btnReturnCard";
-            this.btnReturnCard.Size = new System.Drawing.Size(191, 30);
-            this.btnReturnCard.TabIndex = 24;
-            this.btnReturnCard.Text = "Вернуть карту";
-            this.btnReturnCard.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 
